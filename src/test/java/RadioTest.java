@@ -94,4 +94,31 @@ public class RadioTest {
         int actual = service.getRadioStation();
         assertEquals(expected, actual);
     }
+
+    @Test
+    void setVolume1() {
+        Radio service = new Radio();
+        service.setVolume(5);
+        int expected = 5;
+        int actual = service.getVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void setVolume2() {
+        Radio service = new Radio();
+        service.setVolume(-1);
+        int expected = 0;
+        int actual = service.getVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void setVolume3() {
+        Radio service = new Radio();
+        service.setVolume(11);
+        int expected = 0;
+        int actual = service.getVolume();
+        assertEquals(expected, actual);
+    }
 }
