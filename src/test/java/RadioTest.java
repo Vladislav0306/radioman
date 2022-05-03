@@ -15,9 +15,9 @@ public class RadioTest {
     @Test
     void increaseVolume2() {
         Radio service = new Radio();
-        service.setVolume(10);
+        service.setVolume(100);
         service.increaseVolume();
-        assertEquals(10, service.getVolume());
+        assertEquals(100, service.getVolume());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class RadioTest {
 
     @Test
     void nextRadioStation1() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(5);
         service.nextRadioStation();
         assertEquals(6, service.getRadioStation());
@@ -46,7 +46,7 @@ public class RadioTest {
 
     @Test
     void nextRadioStation2() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(9);
         service.nextRadioStation();
         assertEquals(0, service.getRadioStation());
@@ -54,7 +54,7 @@ public class RadioTest {
 
     @Test
     void prevRadioStation1() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(5);
         service.prevRadioStation();
         assertEquals(4, service.getRadioStation());
@@ -62,7 +62,7 @@ public class RadioTest {
 
     @Test
     void prevRadioStation2() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(0);
         service.prevRadioStation();
         assertEquals(9, service.getRadioStation());
@@ -70,7 +70,7 @@ public class RadioTest {
 
     @Test
     void setRadioStation1() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(5);
         int expected = 5;
         int actual = service.getRadioStation();
@@ -79,7 +79,7 @@ public class RadioTest {
 
     @Test
     void setRadioStation2() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(-1);
         int expected = 0;
         int actual = service.getRadioStation();
@@ -88,7 +88,7 @@ public class RadioTest {
 
     @Test
     void setRadioStation3() {
-        Radio service = new Radio();
+        Radio service = new Radio(10);
         service.setRadioStation(10);
         int expected = 0;
         int actual = service.getRadioStation();
@@ -116,7 +116,7 @@ public class RadioTest {
     @Test
     void setVolume3() {
         Radio service = new Radio();
-        service.setVolume(11);
+        service.setVolume(101);
         int expected = 0;
         int actual = service.getVolume();
         assertEquals(expected, actual);
