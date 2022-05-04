@@ -2,9 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-
 public class RadioTest {
-
 
     @Test
     void increaseVolume1() {
@@ -175,4 +173,5 @@ public class RadioTest {
         Radio radio2 = new Radio(radio1.getCurrentRadioStation(), radio1.getCurrentVolume(), radio1.getNumberOfRadioStations());
         assertEquals(radio1.hashCode(), radio2.hashCode());
     }
+
 }
