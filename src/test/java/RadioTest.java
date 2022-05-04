@@ -168,10 +168,16 @@ public class RadioTest {
     }
 
     @Test
+    void toString1() {
+        Radio radio = new Radio(9,10,10);
+        String string = radio.toString();
+        assertNotEquals(radio, string);
+    }
+
+    @Test
     void hashCode1() {
         Radio radio1 = new Radio(9, 10, 10);
         Radio radio2 = new Radio(radio1.getCurrentRadioStation(), radio1.getCurrentVolume(), radio1.getNumberOfRadioStations());
         assertEquals(radio1.hashCode(), radio2.hashCode());
     }
-
 }
