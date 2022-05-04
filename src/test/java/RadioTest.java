@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+
 public class RadioTest {
 
 
@@ -137,49 +138,41 @@ public class RadioTest {
     void equals1() {
         Radio radio1 = new Radio(9, 10, 10);
         Radio radio2 = new Radio(radio1.getCurrentRadioStation(), radio1.getCurrentVolume(), radio1.getNumberOfRadioStations());
-        assertTrue(radio1.equals(radio2));
+        assertEquals(radio1, radio2);
     }
 
     @Test
     void equals2() {
         Radio radio1 = new Radio(9, 10, 10);
         Radio radio2 = new Radio();
-        assertFalse(radio1.equals(radio2));
+        assertNotEquals(radio1, radio2);
     }
 
     @Test
     void equals3() {
         Radio radio1 = new Radio(9, 10, 10);
         Object o = null;
-        assertFalse(radio1.equals(o));
+        assertNotEquals(radio1, o);
     }
 
     @Test
     void equals4() {
-        Radio radio1 = new Radio(9, 10, 10);
-        Object o = radio1;
-        assertTrue(radio1.equals(o));
+        Radio radio1 = new Radio(10);
+        Radio radio2 = new Radio(radio1.getCurrentRadioStation());
+        assertNotEquals(radio1, radio2);
     }
 
     @Test
     void equals5() {
-        Radio radio1 = new Radio(9, 10, 10);
-        Object o = radio1;
-        assertSame(radio1, o);
+        Radio radio1 = new Radio(9,10,10);
+        Radio radio2 = new Radio(9,9,10);
+        assertNotEquals(radio1, radio2);
     }
-
-    @Test
-    void equals6() {
-        Radio radio1 = new Radio(9, 10, 10);
-        Radio radio2 = new Radio(radio1.getCurrentRadioStation(), radio1.getCurrentVolume(), radio1.getNumberOfRadioStations());
-        assertTrue(radio1.getClass() == radio2.getClass());
-    }
-
 
     @Test
     void hashCode1() {
         Radio radio1 = new Radio(9, 10, 10);
         Radio radio2 = new Radio(radio1.getCurrentRadioStation(), radio1.getCurrentVolume(), radio1.getNumberOfRadioStations());
-        assertTrue(radio1.hashCode() == radio2.hashCode());
+        assertEquals(radio1.hashCode(), radio2.hashCode());
     }
 }
