@@ -49,15 +49,6 @@ public class Radio {
         }
         this.currentRadioStation = currentRadioStation;
     }
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-    public int getNumberOfRadioStations() {
-        return numberOfRadioStations;
-    }
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
 
     public void setNumberOfRadioStations(int numberOfRadioStations) {
         int maxRadioStation = numberOfRadioStations - 1;
