@@ -1,6 +1,4 @@
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Objects;
 
@@ -51,25 +49,20 @@ public class Radio {
         }
         this.currentRadioStation = currentRadioStation;
     }
-
     public int getCurrentVolume() {
         return currentVolume;
     }
-
     public int getNumberOfRadioStations() {
         return numberOfRadioStations;
     }
-
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
-
 
     public void setNumberOfRadioStations(int numberOfRadioStations) {
         int maxRadioStation = numberOfRadioStations - 1;
         this.numberOfRadioStations = maxRadioStation;
     }
-
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume < 0) {
             return;
@@ -79,32 +72,7 @@ public class Radio {
         }
         this.currentVolume = currentVolume;
     }
-
     public Radio(int numberOfRadioStations) {
         this.numberOfRadioStations = numberOfRadioStations;
     }
-
-
-    @Override
-    public String toString() {
-        return "Radio{" +
-                "currentRadioStation=" + currentRadioStation +
-                ", currentVolume=" + currentVolume +
-                ", numberOfRadioStations=" + numberOfRadioStations +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Radio radio = (Radio) o;
-        return currentRadioStation == radio.currentRadioStation && currentVolume == radio.currentVolume && numberOfRadioStations == radio.numberOfRadioStations;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(currentRadioStation, currentVolume, numberOfRadioStations);
-    }
 }
-
